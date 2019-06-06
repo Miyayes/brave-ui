@@ -58,6 +58,8 @@ export interface SummaryItem {
 
 export interface Props {
   contributeRows: ContributeRow[]
+  donationRows: ContributeRow[]
+  tipRows: ContributeRow[]
   onClose: () => void
   onPrint: () => void
   onDownloadPDF: () => void
@@ -154,6 +156,8 @@ export default class ModalActivity extends React.PureComponent<Props, {}> {
       id,
       onClose,
       contributeRows,
+      donationRows,
+      tipRows,
       onMonthChange,
       currentMonth,
       openBalance,
@@ -246,6 +250,18 @@ export default class ModalActivity extends React.PureComponent<Props, {}> {
               rows={transactionRows}
             />
             <StyledTableTitle>
+              <span>{getLocale('donationAllocation')}</span>
+              <StyledTableSubTitle>
+                {getLocale('paymentMonthly', { day: paymentDay })}
+              </StyledTableSubTitle>
+            </StyledTableTitle>
+            <TableContribute
+              header={this.headers}
+              rows={donationRows}
+              allSites={true}
+              showRowAmount={true}
+            />
+            <StyledTableTitle>
               <span>{getLocale('contributeAllocation')}</span>
               <StyledTableSubTitle>
                 {getLocale('paymentMonthly', { day: paymentDay })}
@@ -254,6 +270,15 @@ export default class ModalActivity extends React.PureComponent<Props, {}> {
             <TableContribute
               header={this.headers}
               rows={contributeRows}
+              allSites={true}
+              showRowAmount={true}
+            />
+            <StyledTableTitle>
+              <span>{getLocale('tipAllocation')}</span>
+            </StyledTableTitle>
+            <TableContribute
+              header={this.headers}
+              rows={tipRows}
               allSites={true}
               showRowAmount={true}
             />

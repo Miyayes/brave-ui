@@ -409,6 +409,58 @@ exports[`ModalActivity tests basic tests matches the snapshot 1`] = `
             className="c16"
           >
             <span>
+              MISSING: donationAllocation
+            </span>
+            <div
+              className="c21"
+            >
+              MISSING: paymentMonthly
+            </div>
+          </div>
+          <div>
+            <div>
+              <table
+                className="c17"
+              >
+                <thead>
+                  <tr>
+                    <th
+                      className="c22"
+                    >
+                      <div>
+                        MISSING: rewardsContributeVisited
+                      </div>
+                    </th>
+                    <th
+                      className="c22"
+                    >
+                      <div
+                        className="c23"
+                      >
+                        MISSING: rewardsContributeAttention
+                      </div>
+                    </th>
+                    <th
+                      className="c22"
+                    >
+                      <div
+                        className="c24 c23"
+                      >
+                        MISSING: payment
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+              <div
+                className="c20"
+              />
+            </div>
+          </div>
+          <div
+            className="c16"
+          >
+            <span>
               MISSING: contributeAllocation
             </span>
             <div
@@ -416,6 +468,53 @@ exports[`ModalActivity tests basic tests matches the snapshot 1`] = `
             >
               MISSING: paymentMonthly
             </div>
+          </div>
+          <div>
+            <div>
+              <table
+                className="c17"
+              >
+                <thead>
+                  <tr>
+                    <th
+                      className="c22"
+                    >
+                      <div>
+                        MISSING: rewardsContributeVisited
+                      </div>
+                    </th>
+                    <th
+                      className="c22"
+                    >
+                      <div
+                        className="c23"
+                      >
+                        MISSING: rewardsContributeAttention
+                      </div>
+                    </th>
+                    <th
+                      className="c22"
+                    >
+                      <div
+                        className="c24 c23"
+                      >
+                        MISSING: payment
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+              <div
+                className="c20"
+              />
+            </div>
+          </div>
+          <div
+            className="c16"
+          >
+            <span>
+              MISSING: tipAllocation
+            </span>
           </div>
           <div>
             <div>

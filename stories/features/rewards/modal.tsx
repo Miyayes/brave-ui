@@ -128,7 +128,7 @@ storiesOf('Feature Components/Rewards/Modal', module)
       />
     )
   }))
-  .add('Activity', () => {
+  .add('Monthly Statement', () => {
     const contributions: ContributeRow[] = [
       {
         profile: {
