@@ -314,3 +314,20 @@ export const StyledButton = styled(Button as ComponentType<ButtonProps>)`
 export const StyledPipe = styled<StyledProps, 'span'>('span')`
   font-weight: 300;
 `
+
+export const StyledWalletButton = styled(Button as ComponentType<ButtonProps>)`
+  padding-right: 23px;
+`
+
+export const StyledGreenWalletButton = styled(Button as ComponentType<ButtonProps>)`
+  background: #1bba6a;
+`
+
+export const StyledTextIcon = styled<{}, 'div'>('div')`
+  line-height: initial;
+  background: #392dd1;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  margin: 0 10px;
+`

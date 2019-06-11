@@ -22,6 +22,8 @@ export interface Props {
   id?: string
   disabled?: boolean
   icon?: {image: React.ReactNode, position: 'before' | 'after'}
+  beforeIcon?: React.ReactNode,
+  afterIcon?: React.ReactNode,
   className?: string
 }
 
@@ -57,12 +59,30 @@ export default class ThemedButton extends React.PureComponent<Props, {}> {
     // separate DOM-related props out of props we want to pass to all children
     const { disabled, className, onClick, ...deepProps } = this.props
     const { icon, text } = deepProps
+    let { beforeIcon, afterIcon } = deepProps
+    if (icon) {
+      switch (icon.position) {
+        case 'before':
+          beforeIcon = icon.image
+          break
+        case 'after':
+          afterIcon = icon.image
+          break
+      }
+    }
     if (!onClick && !disabled) {
       console.warn('Button component not provided an onClick handler as a prop')
     }
     let ButtonComponent = this.getButtonComponent()
     return (
       <ButtonComponent className={className} onClick={onClick} disabled={disabled} {...deepProps}>
+        {
+          beforeIcon
+          ? <StyledIcon position={'before'} {...deepProps}>
+              {beforeIcon}
+            </StyledIcon>
+          : null
+        }
         {
           text
           ? <StyledText {...deepProps}>
@@ -71,9 +91,9 @@ export default class ThemedButton extends React.PureComponent<Props, {}> {
           : null
         }
         {
-          icon && icon.image
-          ? <StyledIcon {...deepProps}>
-              {icon.image}
+          afterIcon
+          ? <StyledIcon position={'after'} {...deepProps}>
+              {afterIcon}
             </StyledIcon>
           : null
         }

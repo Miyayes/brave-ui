@@ -74,7 +74,7 @@ const StyledButton = styled<Props, 'button'>('button')`
   border: none;
   outline-color: transparent;
   display: flex;
-  flex-direction: ${p => p.icon && p.icon.position === 'after' ? 'row' : 'row-reverse'};
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   font-family: Poppins, sans-serif;
@@ -122,18 +122,22 @@ export const StyledText = styled<Props, 'div'>('div')`
   line-height: 1;
 `
 
-export const StyledIcon = styled<Props, 'div'>('div')`
+interface IconProps extends Props {
+  position: 'before' | 'after',
+}
+
+export const StyledIcon = styled<IconProps, 'div'>('div')`
   display: block;
   line-height: 0;
   height: var(--icon-size);
   width: var(--icon-size);
   margin: ${(p) => {
     // no margin required if only 1 content item
-    if (!p.text || !p.icon) return null
+    if (!p.text) return null
     // -4px is a universal 'fix' to make the icons appear more aligned
     // with the text.
     // Consider removing this if not all icons are looking great with it,
     // and designers can address in icons, or accept the alignment.
-    return p.icon.position === 'before' ? '0 var(--icon-spacing) 0 -4px' : '0 -4px 0 var(--icon-spacing)'
+    return p.position === 'before' ? '0 var(--icon-spacing) 0 -4px' : '0 -4px 0 var(--icon-spacing)'
   }};
 `
