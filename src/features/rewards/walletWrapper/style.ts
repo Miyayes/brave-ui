@@ -4,6 +4,7 @@
 
 import { Notification } from './'
 import styled from '../../../theme'
+import palette from '../../../theme/colors'
 import Button, { Props as ButtonProps } from '../../../components/buttonsIndicators/button'
 import { ComponentType } from 'react'
 
@@ -330,4 +331,19 @@ export const StyledTextIcon = styled<{}, 'div'>('div')`
   height: 16px;
   border-radius: 8px;
   margin: 0 10px;
+`
+
+export const StyledDialogList = styled<{}, 'ul'>('ul')`
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 0;
+  line-height: 150%;
+`
+
+export const StyledLink = styled<{}, 'a'>('a')`
+  color: ${palette.blue400};
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
 `
