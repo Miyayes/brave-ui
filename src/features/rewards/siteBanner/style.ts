@@ -59,43 +59,48 @@ export const StyledContentWrapper = styled<StyleProps, 'div'>('div')`
   flex-wrap: nowrap;
   max-width: 1320px;
   margin: 0 auto;
+  background: white;
 `
 
 export const StyledContent = styled<{}, 'div'>('div')`
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: calc(100% - 336px);
-  background: #e9f0ff;
+  background: white;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: space-between;
+
 `
 
 export const StyledDonation = styled<StyleProps, 'div'>('div')`
   flex-basis: 336px;
-  background: #696fdc;
+  background: white;
   justify-content: space-between;
   display: flex;
   flex-direction: column;
+
+  box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.1);
+
   ${p => getDonationStyle(p.isMobile)}
 `
 
 export const StyledBanner = styled<StyleProps, 'div'>('div')`
   position: relative;
   min-width: ${p => p.isMobile ? 'unset' : '900px'};
-  background: #DBE3F3;
+  background: white;
 `
 
 export const StyledBannerImage = styled<Partial<Props>, 'div'>('div')`
   font-size: 38px;
   font-weight: 600;
   line-height: 0.74;
-  color: #d1d1db;
+  color: white;
   height: 176px;
   background: ${p => p.bgImage
     ? `url(${p.bgImage}) no-repeat top center / cover`
-    : `url(${bg1Url}) no-repeat top left, url(${bg2Url}) no-repeat top right, #9e9fab`
+    : `url(${bg1Url}) no-repeat top left, url(${bg2Url}) no-repeat top right, linear-gradient(237deg,#a93e9c 30%,#5831BC 100%)`
   };
 `
 
@@ -138,14 +143,15 @@ export const StyledLogoBorder = styled<StyleProps, 'div'>('div')`
   border-radius: 50%;
   width: ${p => p.isMobile ? 100 : 160}px;
   height: ${p => p.isMobile ? 100 : 160}px;
-  background: ${p => p.bg || '#DE4D26'};
+  background: ${p => p.bg || '#ff4724'};
   padding-top: ${p => p.padding ? '35px' : 0};
   margin: -66px 0 25px;
   overflow: hidden;
 `
 
 export const StyledTextWrapper = styled<StyleProps, 'div'>('div')`
-  ${p => getTextStyle(p.isMobile)}
+  ${p => getTextStyle(p.isMobile)};
+  margin-bottom: 20px;
 `
 
 export const StyledTitle = styled<StyleProps, 'div'>('div')`
@@ -153,7 +159,7 @@ export const StyledTitle = styled<StyleProps, 'div'>('div')`
   font-weight: 600;
   line-height: 1;
   color: #4b4c5c;
-  margin: ${p => p.isMobile ? 25 : 10}px 0 0;
+  margin: ${p => p.isMobile ? 25 : 10}px 0 20px;
   padding-left: ${p => p.isMobile ? 25 : 0}px;
 `
 
@@ -168,18 +174,19 @@ export const StyledText = styled<StyleProps, 'div'>('div')`
 
 export const StyledWallet = styled<StyleProps, 'div'>('div')`
   font-size: 12px;
-  color: #afb2f1;
+  color: #343546;
   text-align: right;
-  margin: ${p => p.isMobile ? 20 : 8}px 0 10px;
+  margin: ${p => p.isMobile ? 20 : 16}px 0 16px;
   padding: 0 ${p => p.isMobile ? 20 : 19}px 0 55px;
 `
 
 export const StyledTokens = styled<{}, 'span'>('span')`
-  color: #fff;
+  color: #5831BC;
+  font-weight: bold;
 `
 
 export const StyledOption = styled<{}, 'span'>('span')`
-  color: rgba(255, 255, 255, 0.65);
+  color: #343546;
 `
 
 export const StyledCenter = styled<{}, 'div'>('div')`
@@ -216,6 +223,12 @@ export const StyledSocialItem = styled<{}, 'a'>('a')`
   text-decoration: none;
   display: inline-block;
   margin: 0 8px;
+
+  transition: all .125s ease-in-out;
+
+  :hover {
+    transform: scale(1.15);
+  }
 `
 
 export const StyledSocialIcon = styled<{}, 'span'>('span')`
@@ -234,7 +247,7 @@ export const StyledSocialWrapper = styled<StyleProps, 'div'>('div')`
 
 export const StyledEmptyBox = styled<{}, 'div'>('div')`
   width: 100%;
-  height: 39px;
+  height: 20px;
 `
 
 export const StyledLogoImage = styled<StyleProps, 'div'>('div')`
@@ -254,9 +267,10 @@ export const StyledNoticeWrapper = styled<{}, 'div'>('div')`
   border: 1px solid rgba(155, 157, 192, 0);
   border-radius: 4px;
   width: 90%;
-  margin: 10px 0 18px;
+  margin: 10px 0 22px;
   padding: 7px 15px;
   display: flex;
+  box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.1);
 `
 export const StyledNoticeIcon = styled<{}, 'div'>('div')`
   width: 39px;

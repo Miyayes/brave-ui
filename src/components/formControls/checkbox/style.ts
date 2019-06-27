@@ -60,7 +60,7 @@ export const StyledLabel = styled<Partial<StyleProps>, 'div'>('div')`
   font-family: ${p => p.theme.fontFamily.body};
   display: flex;
   align-items: center;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
   ${getLabel};
   color: var(--checkbox-label-color);
   font-size: var(--checkbox-label-size);

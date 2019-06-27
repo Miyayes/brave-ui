@@ -14,15 +14,15 @@ export const StyledWrapper = styled<Partial<Props>, 'button'>('button')`
   cursor: pointer;
   display: ${p => p.isMobile ? 'block' : 'flex'};
   align-items: center;
-  margin: ${p => p.isMobile ? '0 auto 8px auto' : '0 0 8px 0'};
+  margin: ${p => p.isMobile ? '0 auto 8px auto' : '0 0 12px 0'};
 `
 
 export const StyledAmount = styled<Partial<Props>, 'div'>('div')`
   opacity: 1;
   border-radius: 20px;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: ${p => p.selected ? 'rgba(255, 255, 255, 0.35)' : 'transparent'};
+  color: ${p => p.selected ? 'rgba(255, 255, 255, 1.0)' : '#5831bc'};
+  /* border: 1px solid rgba(255, 255, 255, 0.35); */
+  background: ${p => p.selected ? 'rgba(88, 49, 188, 1.0)' : 'white'};
   vertical-align: baseline;
   padding: ${p => p.type === 'big' ? '0 16px' : '0 12px'};
   min-height: ${p => p.type === 'big' ? 40 : 32}px;
@@ -32,14 +32,24 @@ export const StyledAmount = styled<Partial<Props>, 'div'>('div')`
   align-items: center;
   justify-content: center;
   margin-bottom: ${p => p.isMobile ? 5 : 0}px;
+
+  font-family: Poppins, sans-serif;
+  box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.2);
+  transition: all .15s ease-in-out;
+
+  :hover {
+    transform: scale(1.04);
+  }
 `
 
 export const StyledTokens = styled<{}, 'div'>('div')`
   margin-left: 5px;
+  font-weight: bold;
 `
 
 export const StyledNumber = styled.span`
   display: flex;
+  font-weight: bold;
 `
 
 export const StyledLogo = styled<Partial<Props>, 'div'>('div')`
@@ -51,7 +61,7 @@ export const StyledConverted = styled<Partial<Props>, 'div'>('div')`
   vertical-align: baseline;
   opacity: ${p => p.selected ? 1 : 0.4};
   font-size: ${p => p.type === 'big' ? '12px' : '10px'};
-  color: #ffffff;
+  color: #343546;
   display: ${p => p.isMobile ? 'block' : 'inline-block'};
   font-weight: 500;
 `

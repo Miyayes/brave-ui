@@ -40,9 +40,7 @@ const doNothing = (id: string) => {
 const donationAmounts = [
   { tokens: '1.0', converted: '0.30', selected: false },
   { tokens: '5.0', converted: '1.50', selected: false },
-  { tokens: '10.0', converted: '3.00', selected: false },
-  { tokens: '50.0', converted: '15.00', selected: false },
-  { tokens: '100.0', converted: '30.00', selected: false }
+  { tokens: '10.0', converted: '3.00', selected: false }
 ]
 
 const defaultGrant = {
@@ -120,7 +118,7 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
                 name={text('Name', 'duckduckgo.com')}
                 screenName={screenName}
                 title={text('Title', '')}
-                recurringDonation={boolean('Current recurring donation', true)}
+                recurringDonation={boolean('Current recurring donation', false)}
                 balance={text('Balance ', '5.0')}
                 bgImage={boolean('Show bg image', false) ? siteBgImage : null}
                 logo={boolean('Show logo', false) ? siteBgLogo : null}

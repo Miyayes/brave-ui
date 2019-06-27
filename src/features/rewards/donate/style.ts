@@ -23,14 +23,14 @@ interface StyleProps {
 const customStyle: Record<DonateType, Theme> = {
   big: {
     paddingBox: '0 19px 0 55px',
-    sendBgColor: '#4c54d2',
+    sendBgColor: '#5831bc',
     disabledSendColor: '#3e45b2',
-    paddingSend: '14px 0px 13px 0px',
+    paddingSend: '12px 0px 12px 0px',
     paddingFunds: '13px 12px 13px 24px'
   },
   small: {
     paddingBox: '0 0 0 23px',
-    sendBgColor: '#392dd1',
+    sendBgColor: '#5831bc',
     disabledSendColor: '#1a22a8',
     paddingSend: '11px 0 10px 47px',
     paddingFunds: '12px 0 11px 25px'
@@ -80,13 +80,14 @@ export const StyledDonationTitle = styled<StyleProps, 'div'>('div')`
   font-size: 16px;
   font-weight: 600;
   line-height: 1.75;
-  color: #fff;
+  color: #343546;
   margin-bottom: ${p => p.isMobile ? 20 : 14}px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 167px;
   padding-left: ${p => p.isMobile ? 20 : 0}px;
+  font-family: Poppins, sans-serif;
 `
 
 export const StyledSend = styled<{}, 'div'>('div')`
@@ -101,16 +102,24 @@ export const StyledSend = styled<{}, 'div'>('div')`
   width: 100%;
   text-align: left;
   cursor: pointer;
+
+  transition: all .135s ease-in-out;
+
+  :hover {
+    background: #ff4724;
+  }
 `
 
 export const StyledSendButton = styled<{}, 'button'>('button')`
   display: block;
   border: none;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
-  text-transform: uppercase;
-  background: var(--donate-send-bg);
+  text-transform: none;
+  background: none;
   cursor: pointer;
+
+  font-family: Poppins, sans-serif;
 `
 
 export const StyledButtonWrapper = styled<StyleProps, 'div'>('div')`
@@ -123,7 +132,7 @@ export const StyledIconSend = styled<StyleProps, 'span'>('span')`
   vertical-align: middle;
   display: inline-block;
   margin-right: 15px;
-  color: ${p => p.disabled ? p.donateType === 'small' ? '#1A22A8' : '#3e45b2' : '#a1a8f2'};
+  color: ${p => p.disabled ? p.donateType === 'small' ? '#1A22A8' : '#3e45b2' : 'white'};
   width: 27px;
   height: 27px;
 `

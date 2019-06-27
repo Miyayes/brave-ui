@@ -130,7 +130,7 @@ storiesOf('Feature Components/Rewards/Other/Desktop', module)
           donationAmounts={object('Donations', store.state.donationAmounts)}
           onDonate={onDonate}
           title={'Donation amount'}
-          actionText={text('Action text', 'Send my Donation')}
+          actionText={text('Action text', 'Send tip')}
           onAmountSelection={onAmountSelection}
           currentAmount={text('Current amount', store.state.currentAmount)}
         />
